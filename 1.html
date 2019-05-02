@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head> </head>
+  <body>
+    <div id="mydiv" style="margin:0px auto;border:1px #000 solid; width:500px;height:500px">
+      <img style="position:absolute;" id="myimg" src="http://www.cyberforum.ru/images/cyberforum_logo.jpg" /></div>
+    <script>
+      div = document.getElementById("mydiv")
+     div.onmousemove = function(e){
+       img = document.getElementById("myimg");
+if((e.clientY+img.clientHeight/2 <= div.offsetTop+div.clientHeight)&&(e.clientY-img.clientHeight/2 >= div.offsetTop)){
+img.style.top = (e.clientY-(img.clientHeight/2))+"px";
+}
+if((e.clientX+img.clientWidth/2 <= div.offsetLeft+div.clientWidth)&&(e.clientX-img.clientWidth/2 >= div.offsetLeft)){
+  img.style.left = (e.clientX-(img.clientWidth/2))+"px";
+}  
+      }
+    </script>
+ 
+  </body>
+</html>
